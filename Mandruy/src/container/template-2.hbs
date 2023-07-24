@@ -1,0 +1,88 @@
+<main>
+    
+    <section class="page-two">
+        {{>nav}}
+    {{#with page}}
+    <h1 class="example" hidden>{{title}} </h1>
+    {{/with}}
+</div>
+
+{{>header}}
+<br>
+<div class="hero-box">
+{{#with hero}}
+    <h2 class="hero-name">{{title}} </h2>
+    <p class="hero-descr">{{text}} </p>
+    {{#with button}}
+    <a class="hero-link" href="{{url}}">
+        <button class="hero-link-btn">{{text}} </button>
+    </a>
+    {{/with}}
+{{/with}}
+</div>
+<div>
+    {{>cardPreview}}    
+</div>
+
+<div class="category"> 
+    <p class="second-title">
+        List of post
+    </p>
+    <div class="category-btns">
+    {{#each categories}}
+        {{#with this}}
+            <button class="category-btn" id="{{id}}"><span class="text-btn"> {{text}}</span></button>
+        {{/with}}
+    {{/each}}
+    </div>    
+</div>
+{{!-- <hr> --}}
+
+<div class="row">
+<div class="news col-8">
+    {{#each news}}
+    <div class="new">
+        {{#with this}}
+            <h3 class="news-title">{{title}} </h3>
+            <p class="news-date">{{date}} 
+            <span class="news-author">{{author}} </span>
+            </p>
+            <p class="news-descr">{{description}} </p>
+        {{/with}}
+        <a href="">Continue reading</a>
+        <hr class="border">
+    </div>
+    {{/each}}
+</div>
+\
+<div class="col-3"> 
+    <div class="about">
+        <h4 class="about-title">About</h4>
+        <p class="about-txt">{{about}} </p>
+    </div>
+    <div class="archives">
+        <h4 class="archives-title">Archives</h4>
+        {{#each archive}}
+            {{#with this}}
+            <a class="archive-month" href="{{url}}">{{text}} </a>
+            {{/with}}
+        {{/each}}
+    </div>
+
+    <div class="social">
+        <h4 class="social-title">Social</h4>
+        <div class="social-texts">
+        {{#each social}}
+            {{#with this}}
+            <a class="social-text" href="{{url}}">{{text}} </a>
+            {{/with}}
+        {{/each}}
+        </div>
+    </div>
+</div>
+</div>
+
+<br>
+{{>footer}}
+</section>
+</main>

@@ -1,0 +1,52 @@
+<main>
+    <section>
+     <div>        
+        {{>nav}} 
+        {{#with page}}
+        <h1 class="example" hidden>{{title}} </h1>
+        {{/with}}
+    </div>
+
+{{>header}}
+<br>
+{{#with hero}}
+<div class="hero">
+   <div class="hero-content">
+        <h1 class="hero-title">{{title}} </h1>
+        <p class="hero-text">{{text}} </p>
+   </div>
+   <img src="{{photo}}" alt="photo" class="hero-photo">
+</div>
+{{/with}}
+
+<main class="blog">
+{{#each blog}}
+    <div class="crd">
+        <img src="{{img}}" alt="picture" class="card-img">
+        <h2 class="card-title">{{title}}</h2>
+        <p class="card-text">{{text}} </p>
+        <a href="{{href}}" class="card-btn">
+            <button class="btn-text">{{button}}</button>
+        </a>
+    </div>
+{{/each}}
+</main>
+
+<div class="form">
+    <div class="form-content">
+    {{#with form}}
+    <h3 class="form-title">{{title}} </h3>
+    <p class="form-info">{{info}} </p>
+     </div>
+     <div class="form-btn">
+     <a href="{{href}}" class="form-btn-text">
+        {{button}}
+    </a>
+    </div>
+    {{/with}}
+</div>
+
+<br>
+{{>footer}}
+</section>
+</main>

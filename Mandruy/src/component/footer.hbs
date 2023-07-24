@@ -1,0 +1,18 @@
+<div class="footer-card">
+    <div class="nav-logo footer-items">
+        <nav>
+            <a href="" class="logo"> <span class="txt-logo">B</span>  </a> 
+        </nav>
+        <p class="footer-item">Copyright 2023</p>
+    </div>
+    {{#each footer}}
+        <div class="footer-items">            
+        {{#with this}}
+            <h5 class="footer-name">{{title}} </h5>
+            {{#each links}}
+                <a class="footer-item" href="{{url}}">{{text}}</a>
+            {{/each}}
+        {{/with}}
+        </div>
+     {{/each}}
+</div>

@@ -1,0 +1,18 @@
+<div class="preview-cards row g-4">
+    {{#each preview}}    
+        <div class="preview-card-self col-6">
+
+            <div class="prew-header">
+                <span class="badge-data">{{date}} </span>
+                {{#each category}}
+                <span class="badge-text badge-text-{{id}}"> {{text}} </span>               
+                {{/each}}
+            </div>
+            
+            <p class="prew-name">{{title}} </p>
+            <p class="prew-descr">{{text}} </p>
+            <a href="">Continue reading</a>
+            <hr>            
+        </div>    
+    {{/each}}
+</div>

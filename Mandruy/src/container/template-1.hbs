@@ -1,0 +1,73 @@
+<main>
+    
+    <section>
+        {{>nav}}
+    <div>
+    {{#with page}}
+    <h1 class="example" hidden>{{title}} </h1>
+    {{/with}}
+</div>
+
+<div class="header">
+    <div class="nav-logo">
+        <nav >
+            <a href="" class="logo"> <span class="txt-logo">B</span>  </a> 
+        </nav>
+    </div>
+
+    <div  class="nav-page">
+        <nav>
+        {{#each header}}    
+            <a href="{{url}}" class="nav-page-txt">{{text}} </a> 
+        {{/each}}
+        </nav>
+    </div>
+</div>
+
+<div class="hero-card">
+    {{#with hero}}
+        <h2 class="title-hero">{{title}} </h2>
+        <p class="txt-hero">{{text}} </p>
+    {{/with}}    
+</div>
+<div class="main-card">
+{{#each plans}}
+    
+    <div class="card-one">
+        {{#with this}}
+            <h3 class="card-name">{{name}} </h3>
+            <p class="card-price"> <b class="price">${{price}}</b> <span class="month">/mo </span></p>
+            <div class="card-items">
+                {{#each features}}
+                    <div class="item">
+                    {{.}} 
+                    </div>
+                {{/each}}
+            </div>
+            <button class="card-butn"><span class="text-butn">{{button}} </span></button>
+        {{/with}}
+   </div>
+{{/each}}
+ </div>
+
+
+<div class="footer-card">
+    <div class="nav-logo footer-items">
+        <nav>
+            <a href="" class="logo"> <span class="txt-logo">B</span>  </a> 
+        </nav>
+        <p class="footer-item">Copyright 2023</p>
+    </div>
+    {{#each footer}}
+        <div class="footer-items">            
+        {{#with this}}
+            <h5 class="footer-name">{{title}} </h5>
+            {{#each links}}
+                <a class="footer-item" href="{{url}}">{{text}}</a>
+            {{/each}}
+        {{/with}}
+        </div>
+     {{/each}}
+</div>
+</section>
+</main>
